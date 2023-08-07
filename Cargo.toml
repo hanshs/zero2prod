@@ -4,12 +4,6 @@ name = "zero2prod"
 version = "0.1.0"
 edition = "2021"
 
-# faster linking?
-# [target.x86_64-pc-windows-msvc]
-# rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-# [target.x86_64-pc-windows-gnu]
-# rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-
 [lib]
 # We could use any path here, but we are following the community convention
 # We could specify a library name using the `name` field. If unspecified,
