@@ -53,4 +53,4 @@ databases:
     # production: true
     # cluster_name: newsletter
     # Postgres version - using the latest here
-    version: "14"
+    version: "12"
