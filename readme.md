@@ -18,5 +18,9 @@ TEST_LOG=true cargo test health_check_works | bunyan
 // The original `bunyan` requires NPM, but you can install a Rust-port with
 cargo install bunyan
 docker build --tag zero2prod --file Dockerfile .
+
+
+
+doctl apps create --spec spec.yaml
 ```
 
