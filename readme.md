@@ -22,5 +22,11 @@ docker build --tag zero2prod --file Dockerfile .
 
 
 doctl apps create --spec spec.yaml
+
+
+curl --request POST \
+--data 'name=le%20guin&email=ursula_le_guin%40gmail.com' \
+https://zero2prod-5jp2p.ondigitalocean.app/subscriptions \
+--verbose
 ```
 
