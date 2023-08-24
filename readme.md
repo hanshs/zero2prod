@@ -25,8 +25,13 @@ doctl apps create --spec spec.yaml
 
 
 curl --request POST \
---data 'name=le%20guin&email=ursula_le_guin%40gmail.com' \
-https://zero2prod-5jp2p.ondigitalocean.app/subscriptions \
+--data 'name=ants&email=hansh.starkopf%40gmail.com' \
+https://zero2prod-mt4k4.ondigitalocean.app/subscriptions \
 --verbose
+
+# run a single test with additional logging
+$env:RUST_LOG="sqlx=error,info"; $env:TEST_LOG="enabled"; cargo t subscribe_fails_if_there_is_a_fatal_database_error | bunyan
+
+
 ```
 
