@@ -8,7 +8,7 @@ use actix_web::HttpMessage;
 use actix_web_lab::middleware::Next;
 use std::ops::Deref;
 use uuid::Uuid;
-// [...]
+
 #[derive(Copy, Clone, Debug)]
 pub struct UserId(Uuid);
 impl std::fmt::Display for UserId {
