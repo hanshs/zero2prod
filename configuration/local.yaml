@@ -3,4 +3,4 @@ application:
   base_url: "http://127.0.0.1"
 database:
   require_ssl: false
-  port: 54323
+  port: 5432
