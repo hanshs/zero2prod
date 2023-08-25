@@ -2,8 +2,8 @@ use crate::authentication::reject_anonymous_users;
 use crate::configuration::{DatabaseSettings, Settings};
 use crate::email_client::EmailClient;
 use crate::routes::{
-    admin_dashboard, change_password, change_password_form, confirm, health_check, home, logout,
-    login, login_form, publish_newsletter, publish_newsletter_form, subscribe,
+    admin_dashboard, change_password, change_password_form, confirm, health_check, home, login,
+    login_form, logout, publish_newsletter, publish_newsletter_form, subscribe,
 };
 use actix_session::storage::RedisSessionStore;
 use actix_session::SessionMiddleware;
@@ -31,17 +31,7 @@ impl Application {
             .await
             .expect("Failed to connect to Postgres.");
 
-        let sender_email = configuration
-            .email_client
-            .sender()
-            .expect("Invalid sender email address.");
-        let timeout = configuration.email_client.timeout();
-        let email_client = EmailClient::new(
-            configuration.email_client.base_url,
-            sender_email,
-            configuration.email_client.authorization_token,
-            timeout,
-        );
+        let email_client = configuration.email_client.client();
 
         let address = format!(
             "{}:{}",
