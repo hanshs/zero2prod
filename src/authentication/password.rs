@@ -31,7 +31,7 @@ pub async fn validate_credentials(
             .to_string(),
     );
     if let Some((stored_user_id, stored_password_hash)) =
-        get_stored_credentials(&credentials.username, &pool).await?
+        get_stored_credentials(&credentials.username, pool).await?
     // .map_err(PublishError::UnexpectedError)?
     {
         user_id = Some(stored_user_id);

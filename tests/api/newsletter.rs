@@ -5,7 +5,7 @@ use fake::faker::internet::en::SafeEmail;
 use fake::faker::name::en::Name;
 use fake::Fake;
 use wiremock::matchers::{any, method, path};
-use wiremock::{Mock, MockBuilder, ResponseTemplate};
+use wiremock::{Mock, ResponseTemplate};
 
 // Mock verifies on Drop that we haven't sent the newsletter email
 /// Use the public API of the application under test to create
